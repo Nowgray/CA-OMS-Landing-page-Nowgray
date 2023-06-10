@@ -1,0 +1,18 @@
+- trigger:
+- master
+
+steps:
+- task: FtpUpload@2
+  displayName: 'FTP Upload'
+  inputs:
+    credentialsOption: 'inputs'
+    serverUrl: 'ftp://184.175.83.232'
+    username: 'test'
+    password: 'Nowgray@2024'
+    rootDirectory: '$(System.DefaultWorkingDirectory)'
+    filePatterns: '**'
+    remoteDirectory: '/upload/$(Build.BuildId)/'
+    clean: false
+    cleanContents: false
+    preservePaths: false
+    trustSSL: false
